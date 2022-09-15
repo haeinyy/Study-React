@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 
 const ShinComponent1 = (args) => {
-  const [count, setCount] = useState(0);
-  const [message, setMessage] = useState('ShinComponent1...메시지');
-  const handleClick = (e) => {
-    var aa = e.target.innerHTML;
-    setMessage(aa);
-    if (aa === '증가') {
-      setCount(count + 1);
-    } else {
-      setCount(count - 1);
-    }
-  };
+  // const [count, setCount] = useState(0);
+  // const [message, setMessage] = useState('ShinComponent1...메시지');
+  // const handleClick = (e) => {
+  //   var aa = e.target.innerHTML;
+  //   setMessage(aa);
+  //   if (aa === '증가') {
+  //     setCount(count + 1);
+  //   } else {
+  //     setCount(count - 1);
+  //   }
+  // };
 
   return (
     <div>
@@ -60,80 +60,79 @@ class ShinComponent2 extends Component {
   }
 }
 
-const ShinComponent3 = () => {
-  const [color, setColor] = useState('purple');
-  const [myStyle, setMystyle] = useState({
-    color: 'red',
-    border: '1px solid red',
-  });
-  const handleColorChange = (e) => {
-    var aa = e.target.innerText;
-    setColor(aa);
-    setMystyle({ color: aa, border: `1px solid ${aa}` });
-  };
-  return (
-    <div>
-      <button onClick={handleColorChange}>RED</button>
-      <button onClick={handleColorChange}>GREEN</button>
-      <button onClick={handleColorChange}>blue</button>
-      <p style={{ color }}>신세계I&C</p>
-      <p style={myStyle}>신세계I&C</p>
-    </div>
-  );
-};
+// const ShinComponent3 = () => {
+//   const [color, setColor] = useState('purple');
+//   const [myStyle, setMystyle] = useState({
+//     color: 'red',
+//     border: '1px solid red',
+//   });
+//   const handleColorChange = (e) => {
+//     var aa = e.target.innerText;
+//     setColor(aa);
+//     setMystyle({ color: aa, border: `1px solid ${aa}` });
+//   };
+//   return (
+//     <div>
+//       <button onClick={handleColorChange}>RED</button>
+//       <button onClick={handleColorChange}>GREEN</button>
+//       <button onClick={handleColorChange}>blue</button>
+//       <p style={{ color }}>신세계I&C</p>
+//       <p style={myStyle}>신세계I&C</p>
+//     </div>
+//   );
+// };
 
-const ShinComponent5 = () => {
-  const [fruit, setFruit] = useState(['바나나', '사과']);
-  const [inputFruit, setInputFruit] = useState('');
-  const handleChange = (e) => {
-    setInputFruit(e.target.value);
-  };
-  const handleClick = () => {
-    setFruit([...fruit, inputFruit]);
-  };
-  return (
-    <div>
-      <input onChange={handleChange} name="name" />
-      <button onClick={handleClick}>장바구니담기</button>
-      <p>장바구니보기</p>
-      <ul>
-        {fruit.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
-    </div>
-  );
-};
+// const ShinComponent5 = () => {
+//   const [fruit, setFruit] = useState(['바나나', '사과']);
+//   const [inputFruit, setInputFruit] = useState('');
+//   const handleChange = (e) => {
+//     setInputFruit(e.target.value);
+//   };
+//   const handleClick = () => {
+//     setFruit([...fruit, inputFruit]);
+//   };
+//   return (
+//     <div>
+//       <input onChange={handleChange} name="name" />
+//       <button onClick={handleClick}>장바구니담기</button>
+//       <p>장바구니보기</p>
+//       <ul>
+//         {fruit.map((item, index) => (
+//           <li key={index}>{item}</li>
+//         ))}
+//       </ul>
+//     </div>
+//   );
+// };
 
-const MyTimer = () => {
-  const [currentTime, setCurrentTime] = useState('00:00:00');
-  const now = () => {
-    const date = new Date();
-    const h = String(date.getHours()).padStart(2, '0');
-    const m = String(date.getMinutes()).padStart(2, '0');
-    const s = String(date.getSeconds()).padStart(2, '0');
-    setCurrentTime(`${h}:${m}:${s}`);
-    console.log('타이머실행');
-  };
-  useEffect(() => {
-    const timer = setTimeout(now, 1000);
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [currentTime]);
-  return (
-    <div>
-            <p>{currentTime}</p>   {' '}
-    </div>
-  );
-};
+// const MyTimer = () => {
+//   const [currentTime, setCurrentTime] = useState('00:00:00');
+//   const now = () => {
+//     const date = new Date();
+//     const h = String(date.getHours()).padStart(2, '0');
+//     const m = String(date.getMinutes()).padStart(2, '0');
+//     const s = String(date.getSeconds()).padStart(2, '0');
+//     setCurrentTime(`${h}:${m}:${s}`);
+//     console.log('타이머실행');
+//   };
+//   useEffect(() => {
+//     const timer = setTimeout(now, 1000);
+//     return () => {
+//       clearTimeout(timer);
+//     };
+//   }, [currentTime]);
+//   return (
+//     <div>
+//             <p>{currentTime}</p>   {' '}
+//     </div>
+//   );
+// };
 
 export {
   ShinComponent1 as default,
   ShinComponent2,
-  ShinComponent3,
-  ShinComponent5,
-  MyTimer,
+  // ShinComponent3,
+  // ShinComponent5,
 };
 
 // const [showYN, setShowYN] = useState(true);

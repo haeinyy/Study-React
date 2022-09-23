@@ -8,7 +8,7 @@ const ComponentUsingTest = () => {
         컴포넌트1
       </ShinComponent1>
       <ShinComponent2 title="리액트2" price="30000">
-        퀌포넌트2
+        컴포넌트2
       </ShinComponent2>
     </div>
   );
